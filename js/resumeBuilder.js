@@ -47,28 +47,41 @@ $("#skills").prepend(HTMLskills.replace("%data%", bio.skills));
 
 //Practice with objects quiz - Lesson 9 - Data Type
 var work = {
-     "currentJob": "Web Dev Freelancer",
-     "employer": "Just me",
-     "yearsWorked": 8
-     "city": "Fortaleza, CE, Brazil"
+     jobs:[
+          {
+               "title": "Web Dev Freelancer",
+               "employer": "Just me",
+               "dates": "2008 - Future"
+               "city": "Fortaleza, CE, Brazil",
+               "description":"Developing some WebSites, Ecommerces and ERPs"
+          },
+          {
+               "title": "Partner - Manager",
+               "employer": "Elfi Service",
+               "dates": "1999 - Future"
+               "city": "Fortaleza, CE, Brazil",
+               "description":"Manager a company of Electrical engineering"
+          }
+     ]
+
 }
 
 var education = {
      "schools": [
           {
                "name": "Unifor",
-               "location": "Fortaleza, CE, Brazil",
+               "city": "Fortaleza, CE, Brazil",
                "degree": "BA",
                "majors": ["CS"],
-               "graduationYear": 2010,
+               "dates": 2010,
                "url": "#"
           },
           {
                "name": "Uni7",
-               "location": "Fortaleza, CE, Brazil",
+               "city": "Fortaleza, CE, Brazil",
                "degree": "Especialist",
                "majors": [""],
-               "graduationYear": 2017,
+               "dates": 2017,
                "url": ""
           }
      ],
@@ -76,60 +89,45 @@ var education = {
           {
                "title": "JavaScript Syntax",
                "school": "Udacity",
-               "date": 2017,
+               "dates": 2017,
                "url": "#"
           }
      ]
 }
 
 $("#workExperience").append(HTMLworkEmployer.replace("%data%",work.employer));
-$("#workExperience").append(HTMLworkTitle.replace("%data%",work["currentJob"]));
+$("#workExperience").append(HTMLworkTitle.replace("%data%",work["title"]));
 $("#workExperience").append(HTMLworkStart);
 
 $("#education").append(HTMLschoolName.replace("%data%", education.schools[0].name));
 $("#education").append(HTMLschoolStart);
 
 var project = {
-     "websites": [
+     "projects": [
           {
-               "name":"Elfi Service",
-               "year":2010,
-               "tecUsed":["HTML","CSS","Bootstrap","Ajax","jQuery","PHP OO", "MySQL DB"],
-               "url":"https://elfiservice.eco.br"
+               "title": "Elfi Service WebSite",
+               "dates": "2010-2017",
+               "description": "",
+               "images": ["#1","#2"]
           },
           {
-               "name":"Dra. Karla Bessa - Fisioterapeuta",
-               "year":2008,
-               "tecUsed":["HTML","CSS","Bootstrap","Ajax","jQuery","PHP OO", "MySQL DB"],
-               "url":"https://karlabessa.com.br"
+               "title": "Dra. Karla Bessa WebSite",
+               "dates": "2008-2017",
+               "description": "",
+               "images": ["#1","#2"]
           },
           {
-               "name":"Polo Satere",
-               "year":2016,
-               "tecUsed":["HTML","CSS","Bootstrap","Ajax","jQuery","PHP OO", "MySQL DB"],
-               "url":"https://polosatere.com.br"
+               "title": "Yoga Santa Felicidade WebSite",
+               "dates": "2012-2017",
+               "description": "",
+               "images": ["#1","#2"]
           },
           {
-               "name":"Yoga Santa Felicidade",
-               "year":2012,
-               "tecUsed":["HTML","CSS","Bootstrap","Ajax","jQuery","PHP OO", "MySQL DB"],
-               "url":"https://yogasantafelicidade.com"
+               "title": "Polo Satere WebSite",
+               "dates": "2016-2017",
+               "description": "",
+               "images": ["#1","#2"]
           }
-     ],
-     "ecommerces":[
-          {
-               "name":"Loja Polo Satere",
-               "year":2016,
-               "tecUsed":["HTML","CSS","Bootstrap","Ajax","jQuery","PHP OO", "MySQL DB", "JSon"],
-               "url":"https://loja.polosatere.com.br"
-          }
-     ],
-     "eads":[
-          {
-               "name":"Simples Tecnologia",
-               "year":2017,
-               "tecUsed":["HTML","CSS","Bootstrap","Ajax","jQuery","PHP OO", "MySQL DB", "JSon"],
-               "url":"https://simplestecnologia.com.br"
-          }
+
      ]
 }
