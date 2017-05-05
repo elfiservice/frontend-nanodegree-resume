@@ -25,7 +25,10 @@ var bio = {
      contactInf: {
           email: "elfiservice@hotmail.com",
           github: "elfiservice",
-          mobile: "+5585994128554"
+          mobile: "+5585994128554",
+          "twitter":"elfiservice",
+          "blog":"https://ajudanaweb.com.br/blog"
+          "location":"Fortaleza, Ce, Brazil"
      },
      image: "images/me.jpg",
      welcomeMessage: "Hi, I love God, my family and Coding",
