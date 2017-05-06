@@ -27,7 +27,7 @@ var bio = {
           github: "elfiservice",
           mobile: "+5585994128554",
           "twitter":"elfiservice",
-          "blog":"https://ajudanaweb.com.br/blog"
+          "blog":"https://ajudanaweb.com.br/blog",
           "location":"Fortaleza, Ce, Brazil"
      },
      image: "images/me.jpg",
@@ -51,14 +51,14 @@ var work = {
           {
                "title": "Web Dev Freelancer",
                "employer": "Just me",
-               "dates": "2008 - Future"
+               "dates": "2008 - Future",
                "city": "Fortaleza, CE, Brazil",
                "description":"Developing some WebSites, Ecommerces and ERPs"
           },
           {
                "title": "Partner - Manager",
                "employer": "Elfi Service",
-               "dates": "1999 - Future"
+               "dates": "1999 - Future",
                "city": "Fortaleza, CE, Brazil",
                "description":"Manager a company of Electrical engineering"
           }
