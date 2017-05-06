@@ -1,28 +1,12 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
- // var myName = "Armando Jr.";
- // var myRole = "Front-End Dev.";
- // $("#main").append(myName);
- //
- // var awesomeThoughts = "I am " + myName + " and I am AWESOME!";
- //
- // console.log(awesomeThoughts);
- //
- // //String replace
- // var funThoughts = awesomeThoughts.replace("AWESOME","FUN");
- // $("#main").append(funThoughts);
-
- // var formattedName = HTMLheaderName.replace("%data%",myName);
- // var formattedRole = HTMLheaderRole.replace("%data%",myRole);
- // $("#header").prepend(formattedRole);
- // $("#header").prepend(formattedName);
 
 //Bigraphy quiz - Lesson 9 - Data Type
 var bio = {
      name: "Armando Jr.",
      role: "Front-End Dev.",
-     contactInf: {
+     contacts: {
           email: "elfiservice@hotmail.com",
           github: "elfiservice",
           mobile: "+5585994128554",
@@ -32,19 +16,24 @@ var bio = {
      },
      image: "images/me.jpg",
      welcomeMessage: "Hi, I love God, my family and Coding",
-     skills: ["HTML", "CSS", "Javascript", "Git", "GitHub"]
+     skills: ["HTML", "CSS", "Javascript", "Git", "GitHub"],
+     display: function(){
+          $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+          $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+          $("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+          $("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+          $("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+          $("#header").append(HTMLbioPic.replace("%data%", bio.image));
+          $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+          var skillsCount = bio.skills.length;
+          if(skillsCount > 0){
+               $("#header").append(HTMLskillsStart);
+               for(var i = 0; i < skillsCount; i++){
+                    $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+               }
+          }
+     }
 }
-
-$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
-$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-$("#topContacts").append(HTMLemail.replace("%data%", bio.contactInf.email));
-$("#topContacts").append(HTMLgithub.replace("%data%", bio.contactInf.github));
-$("#topContacts").append(HTMLmobile.replace("%data%", bio.contactInf.mobile));
-$("#header").prepend(HTMLbioPic.replace("%data%", bio.image));
-$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
-$("#header").append(HTMLskillsStart);
-$("#skills").prepend(HTMLskills.replace("%data%", bio.skills));
-
 //Practice with objects quiz - Lesson 9 - Data Type
 var work = {
      jobs:[
@@ -62,15 +51,66 @@ var work = {
                "city": "Fortaleza, CE, Brazil",
                "description":"Manager a company of Electrical engineering"
           }
-     ]
+     ],
+     display: function(){
+          work.jobs.forEach(function(job){
+               $("#workExperience").append(HTMLworkStart);
+               $(".work-entry:last").append(HTMLworkEmployer.replace("%data%",job.employer) + HTMLworkTitle.replace("%data%",job.title));
+               $(".work-entry:last").append(HTMLworkDates.replace("%data%", job.dates));
+               $(".work-entry:last").append(HTMLworkLocation.replace("%data%", job.city));
+               $(".work-entry:last").append(HTMLworkDescription.replace("%data%", job.description));
+          });
+     }
 
+}
+
+var project = {
+     "projects": [
+          {
+               "title": "Elfi Service WebSite",
+               "dates": "2010-2017",
+               "description": "",
+               "images": ["images/elfi1.png","images/elfi2.png"]
+          },
+          {
+               "title": "Dra. Karla Bessa WebSite",
+               "dates": "2008-2017",
+               "description": "",
+               "images": ["images/karla1.png","images/karla2.png"]
+          },
+          {
+               "title": "Yoga Santa Felicidade WebSite",
+               "dates": "2012-2017",
+               "description": "",
+               "images": ["images/yoga1.png","images/yoga2.png"]
+          },
+          {
+               "title": "Polo Satere WebSite",
+               "dates": "2016-2017",
+               "description": "",
+               "images": ["images/polo1.png","images/polo2.png"]
+          }
+
+     ],
+     display: function(){
+          project.projects.forEach(function(itemObj){
+               $("#projects").append(HTMLprojectStart);
+               $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", itemObj.title));
+               $(".project-entry:last").append(HTMLprojectDates.replace("%data%", itemObj.dates));
+               $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", itemObj.description));
+               for(var i = 0; i < itemObj.images.length; i++){
+                    $(".project-entry:last").append(HTMLprojectImage.replace("%data%", itemObj.images[i]));
+               }
+
+          });
+     }
 }
 
 var education = {
      "schools": [
           {
                "name": "Unifor",
-               "city": "Fortaleza, CE, Brazil",
+               "city": "Sao Paulo, SP, Brazil",
                "degree": "BA",
                "majors": ["CS"],
                "dates": 2010,
@@ -91,43 +131,53 @@ var education = {
                "school": "Udacity",
                "dates": 2017,
                "url": "#"
+          },
+          {
+               "title": "Front-End Developer",
+               "school": "Udacity",
+               "dates": 2017,
+               "url": "#"
           }
-     ]
-}
-
-$("#workExperience").append(HTMLworkEmployer.replace("%data%",work.employer));
-$("#workExperience").append(HTMLworkTitle.replace("%data%",work["title"]));
-$("#workExperience").append(HTMLworkStart);
-
-$("#education").append(HTMLschoolName.replace("%data%", education.schools[0].name));
-$("#education").append(HTMLschoolStart);
-
-var project = {
-     "projects": [
-          {
-               "title": "Elfi Service WebSite",
-               "dates": "2010-2017",
-               "description": "",
-               "images": ["#1","#2"]
-          },
-          {
-               "title": "Dra. Karla Bessa WebSite",
-               "dates": "2008-2017",
-               "description": "",
-               "images": ["#1","#2"]
-          },
-          {
-               "title": "Yoga Santa Felicidade WebSite",
-               "dates": "2012-2017",
-               "description": "",
-               "images": ["#1","#2"]
-          },
-          {
-               "title": "Polo Satere WebSite",
-               "dates": "2016-2017",
-               "description": "",
-               "images": ["#1","#2"]
+     ],
+     displaySchools: function(){
+          education.schools.forEach(function(school){
+               $("#education").append(HTMLschoolStart);
+               $(".education-entry:last").append(HTMLschoolName.replace("%data%", school.name + HTMLschoolDegree.replace("%data%", school.degree)));
+               $(".education-entry:last").append(HTMLschoolDates.replace("%data%", school.dates));
+               for(var i = 0; i < school.majors.length; i++){
+                    $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", school.majors));
+               }
+          });
+     },
+     displayOnlineCourses: function(){
+          if(education.onlineCourses.length > 0){
+               $("#education").append(HTMLonlineClasses);
+               education.onlineCourses.forEach(function(school){
+                    $("#education").append(HTMLschoolStart);
+                    $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", school.title + HTMLonlineSchool.replace("%data%", school.school)));
+                    $(".education-entry:last").append(HTMLonlineDates.replace("%data%", school.dates));
+                    $(".education-entry:last").append(HTMLonlineURL.replace("%data%", school.url));
+               });
           }
 
-     ]
+
+     }
 }
+
+bio.display();
+work.display();
+project.display();
+education.displaySchools();
+education.displayOnlineCourses();
+
+$("#mapDiv").append(googleMap);
+// $("#main").append(internationalizeButton);
+// function inName(originName){
+//      var stringArray = originName.split(" ");
+//      var formattedFirtName = stringArray[0].toLowerCase();
+//      formattedFirtName = formattedFirtName.slice(1);
+//      formattedFirtName = stringArray[0][0].toUpperCase() + formattedFirtName;
+//      var formattedSecondName = stringArray[1].toUpperCase();
+//      var newString = formattedFirtName + " " + formattedSecondName;
+//      return newString;
+// }
