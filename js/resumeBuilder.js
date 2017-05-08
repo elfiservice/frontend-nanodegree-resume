@@ -7,12 +7,16 @@ var bio = {
      name: "Armando Jr.",
      role: "Front-End Dev.",
      contacts: {
-          email: "elfiservice@hotmail.com",
-          github: "elfiservice",
-          mobile: "+5585994128554",
+          "email": "elfiservice@hotmail.com",
+          "github": "elfiservice",
+          "mobile": "+5585994128554",
           "twitter":"elfiservice",
           "blog":"https://ajudanaweb.com.br/blog",
-          "location":"Fortaleza, Ce, Brazil"
+          "location":"Fortaleza, Ce, Brazil",
+          "facebook": "elfiservice",
+          "instagram": "elfiservice",
+          "youtube": "elfiservice",
+          "linkedIn": "armando-junior-elfiservice"
      },
      image: "images/me.jpg",
      welcomeMessage: "Hi, I love God, my family and Coding",
@@ -20,9 +24,10 @@ var bio = {
      display: function(){
           $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
           $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-          $("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+          $("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email).replace("%data%", bio.contacts.email));
           $("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
-          $("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+          $("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile).replace("%data%", bio.contacts.mobile));
+
           $("#header").append(HTMLbioPic.replace("%data%", bio.image));
           $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
           var skillsCount = bio.skills.length;
@@ -32,6 +37,10 @@ var bio = {
                     $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
                }
           }
+          (bio.contacts.facebook ? $("#footerContacts").append(HTMLfacebook.replace("%data%", bio.contacts.facebook)) : "");
+          (bio.contacts.instagram ? $("#footerContacts").append(HTMLinstagram.replace("%data%", bio.contacts.instagram)) : "");
+          (bio.contacts.youtube ? $("#footerContacts").append(HTMLyoutube.replace("%data%", bio.contacts.youtube)) : "");
+                    (bio.contacts.linkedIn ? $("#footerContacts").append(HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn)) : "");
      }
 }
 //Practice with objects quiz - Lesson 9 - Data Type
@@ -170,6 +179,7 @@ project.display();
 education.displaySchools();
 education.displayOnlineCourses();
 
+$("title").html("Resume | " + bio.name + " | " + bio.role);
 $("#mapDiv").append(googleMap);
 // $("#main").append(internationalizeButton);
 // function inName(originName){

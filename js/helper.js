@@ -13,15 +13,22 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLheaderRole = '<span class="role">%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><a rel="nofollow" href="tel:%data%"><i class="fa fa-mobile" aria-hidden="true"></i></a><span class="mobile-text white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><a rel="nofollow" href="mailto:Armando JR. Resume <%data%>?subject=Via site Resume"><i class="fa fa-envelope-o" aria-hidden="true"></i></a><span class="email-text white-text">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item"><a href="https://www.twitter.com/%data%" target="_blank" alt="Link to twitter Profile"><i class="fa fa-twitter orange-text" aria-hidden="true"></i></a></li>';
+var HTMLgithub = '<li class="flex-item"><a href="https://www.github.com/%data%" target="_blank" alt="Link to GitHub Profile"><i class="fa fa-github orange-text" aria-hidden="true"></i></a></li>';
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+
+var HTMLfacebook = '<li class="flex-item footer-item"><a href="https://www.facebook.com/%data%" target="_blank" alt="Link to facebook Profile"><i class="fa fa-facebook orange-text" aria-hidden="true"></i></a></li>';
+var HTMLinstagram = '<li class="flex-item footer-item"><a href="https://www.instagram.com/%data%" target="_blank" alt="Link to instagram Profile"><i class="fa fa-instagram orange-text" aria-hidden="true"></i></a></li>';
+var HTMLyoutube = '<li class="flex-item footer-item"><a href="https://www.youtube.com/%data%" target="_blank" alt="Link to youtube Profile"><i class="fa fa-youtube orange-text" aria-hidden="true"></i></a></li>';
+var HTMLlinkedIn = '<li class="flex-item footer-item"><a href="https://www.linkedin.com/in/%data%" target="_blank" alt="Link to linkedIn Profile"><i class="fa fa-linkedin orange-text" aria-hidden="true"></i></a></li>';
+
+
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
@@ -29,20 +36,20 @@ var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
-var HTMLworkStart = '<div class="work-entry"></div>';
+var HTMLworkStart = '<article class="work-entry"></article>';
 var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
+var HTMLprojectStart = '<article class="project-entry"></article>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
-var HTMLschoolStart = '<div class="education-entry"></div>';
+var HTMLschoolStart = '<article class="education-entry"></article>';
 var HTMLschoolName = '<a href="#">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
@@ -57,6 +64,8 @@ var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
+
+
 
 
 /*

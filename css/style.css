@@ -114,6 +114,24 @@ a {
 
 #header {
     background-color: #484848;
+    text-align: center;
+    color: inherit;
+}
+
+#header .role {
+    display: block;
+}
+
+#header ul li {
+    font-size: 1.5em;
+}
+
+#header ul li a {
+    color: #f5ae23;
+}
+
+#header ul li .mobile-text, .email-text {
+    display: none;
 }
 
 .flex-box {
@@ -141,10 +159,10 @@ ul {
 }
 
 .biopic {
-    float: left;
     padding: 10px;
-    width: 200px;
+    width: 100px;
     display: none;
+    border-radius: 50%;
 }
 
 img {
@@ -157,6 +175,8 @@ span {
 
 #lets-connect {
     text-align: center;
+    margin-top: 5%;
+    font-size: 1.5em;
 }
 
 .project-entry img {
@@ -164,31 +184,19 @@ span {
     padding: 10px;
 }
 
-
-/* Media queries to handle various device widths */
-
-@media only screen and (max-width: 1024px) {
-    #lets-connect {
-        margin-top: 5%;
-    }
+footer {
+    text-align: center;
+    padding: 0 5%;
+    background: #484848;
+    color: #fff;
+    font-size: 0.8em;
 }
 
-@media only screen and (max-width:900px) {
-    .biopic {
-        width: 175px;
-    }
-}
-
-@media only screen and (max-width: 750px) {
-    #lets-connect {
-        margin-top: 10%;
-    }
-    .biopic {
-        width: 150px;
-    }
-    .welcome-message {
-        display: none;
-    }
+#mapDiv {
+    height: 400px;
+    width: 100%;
+    padding-bottom: 5%;
+    display: inline-block;
 }
 
 #map {
@@ -197,17 +205,49 @@ span {
     margin: 0 5%;
 }
 
-#mapDiv {
-    height: 400px;
-    width: 100%;
-    padding-bottom: 5%;
+
+/* Media queries to handle various device widths */
+
+@media only screen and (max-width: 750px) {
+    /*#lets-connect {
+        margin-top: 10%;
+    }
+    .biopic {
+        width: 150px;
+    }
+    .welcome-message {
+        display: none;
+    }*/
 }
 
 @media only screen and (min-width: 750px) {
-    #skills-h3, .biopic {
+    #skills-h3 {
         display: block;
+    }
+    .biopic {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+        transition-duration: 2s;
+    }
+    #header ul li {
+        padding: 0 20px;
+        font-size: 2em;
+    }
+    #header ul li .mobile-text, .email-text {
+        display: block;
+        font-size: 0.5em;
+    }
+    #header .flex-box, .flex-column {
+        justify-content: space-around;
     }
     .project-entry img {
         width: 300px;
+    }
+    .flex-box {
+        justify-content: center;
+    }
+    #lets-connect ul li {
+        padding: 0 20px;
     }
 }
