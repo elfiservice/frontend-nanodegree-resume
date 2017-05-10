@@ -68,10 +68,11 @@ p {
 }
 
 a {
-    color: #1199c3;
+    /*color: #1199c3;*/
     text-decoration: none;
     margin-top: 10px;
     display: block;
+    color: #f5ae23;
 }
 
 .welcome-message {
@@ -240,6 +241,12 @@ footer {
     }
     #header .flex-box, .flex-column {
         justify-content: space-around;
+    }
+    .project-entry {
+        text-align: center;
+    }
+    .project-entry a {
+        text-align: left;
     }
     .project-entry img {
         width: 300px;
