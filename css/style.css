@@ -1,4 +1,4 @@
- * {
+* {
      box-sizing: border-box;
  }
 
@@ -114,6 +114,11 @@
      display: none;
  }
 
+ #skills {
+     padding: 15px 0;
+     font-size: 0.8em;
+ }
+
  .orange {
      background-color: #f5ae23;
  }
@@ -173,9 +178,9 @@
  }
 
  .flex-column {
-     display: flex;
+     /*display: flex;
      flex-direction: row;
-     flex-wrap: wrap;
+     flex-wrap: wrap;*/
  }
 
  .center-content {
@@ -252,6 +257,9 @@
      #skills-h3 {
          display: block;
      }
+     #skills {
+         font-size: 1em;
+     }
      .biopic {
          display: block;
          margin: 0 auto;
@@ -303,3 +311,8 @@
          padding: 0 20px;
      }
  }
+}
+
+}
+
+}
