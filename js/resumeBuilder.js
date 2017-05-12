@@ -63,7 +63,7 @@ var work = {
      ],
      display: function(){
           work.jobs.forEach(function(job){
-               $("#workExperience").append(HTMLworkStart);
+               $(".workExperience-container").append(HTMLworkStart);
                $(".work-entry:last").append(HTMLworkEmployer.replace("%data%",job.employer) + HTMLworkTitle.replace("%data%",job.title));
                $(".work-entry:last").append(HTMLworkDates.replace("%data%", job.dates));
                $(".work-entry:last").append(HTMLworkLocation.replace("%data%", job.city));
@@ -103,12 +103,12 @@ var project = {
      ],
      display: function(){
           project.projects.forEach(function(itemObj){
-               $("#projects").append(HTMLprojectStart);
+               $(".project-container").append(HTMLprojectStart);
                $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", itemObj.title));
                $(".project-entry:last").append(HTMLprojectDates.replace("%data%", itemObj.dates));
                $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", itemObj.description));
                for(var i = 0; i < itemObj.images.length; i++){
-                    $(".project-entry:last").append(HTMLprojectImage.replace("%data%", itemObj.images[i]));
+                    $(".project-entry:last").prepend(HTMLprojectImage.replace("%data%", itemObj.images[i]));
                }
 
           });
@@ -150,7 +150,7 @@ var education = {
      ],
      displaySchools: function(){
           education.schools.forEach(function(school){
-               $("#education").append(HTMLschoolStart);
+               $(".education-container").append(HTMLschoolStart);
                $(".education-entry:last").append(HTMLschoolName.replace("%data%", school.name + HTMLschoolDegree.replace("%data%", school.degree)));
                $(".education-entry:last").append(HTMLschoolDates.replace("%data%", school.dates));
                for(var i = 0; i < school.majors.length; i++){
@@ -160,9 +160,9 @@ var education = {
      },
      displayOnlineCourses: function(){
           if(education.onlineCourses.length > 0){
-               $("#education").append(HTMLonlineClasses);
+               $(".education-container").append(HTMLonlineClasses);
                education.onlineCourses.forEach(function(school){
-                    $("#education").append(HTMLschoolStart);
+                    $(".education-container").append(HTMLschoolStart);
                     $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", school.title + HTMLonlineSchool.replace("%data%", school.school)));
                     $(".education-entry:last").append(HTMLonlineDates.replace("%data%", school.dates));
                     $(".education-entry:last").append(HTMLonlineURL.replace("%data%", school.url));
