@@ -2,7 +2,6 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 
-//Bigraphy quiz - Lesson 9 - Data Type
 var bio = {
      name: "Armando Jr.",
      role: "Front-End Dev.",
@@ -44,7 +43,7 @@ var bio = {
           (bio.contacts.linkedIn ? $("#footerContacts").append(HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn)) : "");
      }
 }
-//Practice with objects quiz - Lesson 9 - Data Type
+
 var work = {
      jobs:[
           {
@@ -188,28 +187,28 @@ var education = {
      }
 }
 
+var setSeo = {
+     "favicon": "favicon.png",
+     "siteDescription": "Portifolio resume",
+     setOut: function(){
+          $("title").html("Resume | " + bio.name + " | " + bio.role);
+          $("link[rel~=shortcut]").attr("href","images/" + setSeo.favicon);
+          $("meta[name~=description]").attr("content", setSeo.siteDescription);
+     }
+}
+
+setSeo.setOut();
 bio.display();
 work.display();
 project.display();
 education.display();
 
-$("title").html("Resume | " + bio.name + " | " + bio.role);
 $("#mapDiv").append(googleMap);
 
+// Show a mensage Click Me for 3 seconds
 $("#header ul").mouseover(function(){
 $("#topContacts .click-me").fadeIn("slow");
      setTimeout(function(){
           $("#topContacts .click-me").fadeOut("slow");
      }, 3000);
 });
-
-// $("#main").append(internationalizeButton);
-// function inName(originName){
-//      var stringArray = originName.split(" ");
-//      var formattedFirtName = stringArray[0].toLowerCase();
-//      formattedFirtName = formattedFirtName.slice(1);
-//      formattedFirtName = stringArray[0][0].toUpperCase() + formattedFirtName;
-//      var formattedSecondName = stringArray[1].toUpperCase();
-//      var newString = formattedFirtName + " " + formattedSecondName;
-//      return newString;
-// }
