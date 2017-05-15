@@ -28,6 +28,7 @@ var bio = {
           $("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
           $("#topContacts").append(HTMLmobile.replace("#", bio.contacts.mobile).replace("%data%", bio.contacts.mobile));
 
+
           $("#header").append(HTMLbioPic.replace("%data%", bio.image));
           $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
           var skillsCount = bio.skills.length;
@@ -195,16 +196,11 @@ education.display();
 $("title").html("Resume | " + bio.name + " | " + bio.role);
 $("#mapDiv").append(googleMap);
 
-$("#header").click(function(){
-     $("#topContacts span:hidden:first").fadeIn(1000);
-
-     var clickMeTime = setInterval(function(){
-          $("#topContacts .click-me").css("display", "none").fadeOut(500);
-
+$("#header ul").mouseover(function(){
+$("#topContacts .click-me").fadeIn("slow");
+     setTimeout(function(){
+          $("#topContacts .click-me").fadeOut("slow");
      }, 3000);
-
-
-
 });
 
 // $("#main").append(internationalizeButton);
