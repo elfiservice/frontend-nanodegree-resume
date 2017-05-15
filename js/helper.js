@@ -16,8 +16,8 @@ var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span class="role">%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><a rel="nofollow" href="tel:%data%"><i class="fa fa-mobile" aria-hidden="true"></i></a><span class="mobile-text white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><a rel="nofollow" href="mailto:Armando JR. Resume <%data%>?subject=Via site Resume"><i class="fa fa-envelope-o" aria-hidden="true"></i></a><span class="email-text white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><a rel="nofollow" href="tel:#"><i class="fa fa-mobile" aria-hidden="true"></i><span class="click-me">Click me !</span></a><span class="mobile-text white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><a rel="nofollow" href="mailto: Site Resume <#>?subject=Via site Resume"><i class="fa fa-envelope-o" aria-hidden="true"></i></a><span class="email-text white-text">%data%</span></li>';
 var HTMLtwitter = '<li class="flex-item"><a href="https://www.twitter.com/%data%" target="_blank" alt="Link to twitter Profile"><i class="fa fa-twitter orange-text" aria-hidden="true"></i></a></li>';
 var HTMLgithub = '<li class="flex-item"><a href="https://www.github.com/%data%" target="_blank" alt="Link to GitHub Profile"><i class="fa fa-github orange-text" aria-hidden="true"></i></a></li>';
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
@@ -37,20 +37,20 @@ var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<article class="work-entry"></article>';
-var HTMLworkEmployer = '<a href="#">%data%';
+var HTMLworkEmployer = '<a href="#" target="_blank" alt="Link to Employer">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p><br>%data%</p>';
 
 var HTMLprojectStart = '<article class="project-entry"></article>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectTitle = '<a href="#" target="_blank" alt="Link to Project">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLschoolStart = '<article class="education-entry"></article>';
-var HTMLschoolName = '<a href="#">%data%';
+var HTMLschoolName = '<a href="#" target="_blank" alt="Link to School">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
