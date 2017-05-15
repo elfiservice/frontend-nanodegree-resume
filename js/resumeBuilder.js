@@ -17,7 +17,7 @@ var bio = {
           "youtube": "elfiservice",
           "linkedIn": "armando-junior-elfiservice"
      },
-     image: "images/me.jpg",
+     image: "images/fixed/me.jpg",
      welcomeMessage: "Hi, I love God, my family and Coding",
      skills: ["HTML", "CSS", "Javascript", "Git", "GitHub"],
      display: function(){
@@ -83,28 +83,28 @@ var project = {
                "title": "Elfi Service WebSite",
                "dates": "2010-2017",
                "description": "",
-               "images": ["images/elfi1.png","images/elfi2.png"],
+               "images": ["images/elfi1-500_medium_2x.png","images/elfi2-500_medium_2x.png"],
                "url":"https://elfiservice.eco.br/"
           },
           {
                "title": "Dra. Karla Bessa WebSite",
                "dates": "2008-2017",
                "description": "",
-               "images": ["images/karla1.png","images/karla2.png"],
+               "images": ["images/karla1-500_medium_2x.png","images/karla2-500_medium_2x.png"],
                "url":"https://karlabessa.com.br/"
           },
           {
                "title": "Yoga Santa Felicidade WebSite",
                "dates": "2012-2017",
                "description": "",
-               "images": ["images/yoga1.png","images/yoga2.png"],
+               "images": ["images/yoga1-500_medium_2x.png","images/yoga2-500_medium_2x.png"],
                "url":"https://yogasantafelicidade.com/"
           },
           {
                "title": "Polo Satere WebSite",
                "dates": "2016-2017",
                "description": "",
-               "images": ["images/polo1.png","images/polo2.png"],
+               "images": ["images/polo1-500_medium_2x.png","images/polo2-500_medium_2x.png"],
                "url":"http://www.polosatere.com.br/"
           }
 
@@ -192,7 +192,7 @@ var setSeo = {
      "siteDescription": "Portifolio resume",
      setOut: function(){
           $("title").html("Resume | " + bio.name + " | " + bio.role);
-          $("link[rel~=shortcut]").attr("href","images/" + setSeo.favicon);
+          $("link[rel~=shortcut]").attr("href","images/fixed/" + setSeo.favicon);
           $("meta[name~=description]").attr("content", setSeo.siteDescription);
      }
 }
