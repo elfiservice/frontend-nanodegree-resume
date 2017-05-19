@@ -17,18 +17,18 @@ var bio = {
           "youtube": "elfiservice",
           "linkedIn": "armando-junior-elfiservice"
      },
-     image: "images/fixed/me.jpg",
+     biopic: "images/fixed/me.jpg",
      welcomeMessage: "Hi, I love God, my family and Coding",
      skills: ["HTML", "CSS", "Javascript", "Git", "GitHub"],
      display: function(){
           $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
           $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
           $("#topContacts").append(HTMLemail.replace("#", bio.contacts.email).replace("%data%", bio.contacts.email));
-          $("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+          $("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github).replace("#", bio.contacts.github));
           $("#topContacts").append(HTMLmobile.replace("#", bio.contacts.mobile).replace("%data%", bio.contacts.mobile));
+          $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 
-
-          $("#header").append(HTMLbioPic.replace("%data%", bio.image));
+          $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
           $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
           var skillsCount = bio.skills.length;
           if(skillsCount > 0){
@@ -37,12 +37,18 @@ var bio = {
                     $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
                }
           }
-          (bio.contacts.facebook ? $("#footerContacts").append(HTMLfacebook.replace("%data%", bio.contacts.facebook)) : "");
-          (bio.contacts.instagram ? $("#footerContacts").append(HTMLinstagram.replace("%data%", bio.contacts.instagram)) : "");
-          (bio.contacts.youtube ? $("#footerContacts").append(HTMLyoutube.replace("%data%", bio.contacts.youtube)) : "");
-          (bio.contacts.linkedIn ? $("#footerContacts").append(HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn)) : "");
+
+          $("#footerContacts").append(HTMLemail.replace("#", bio.contacts.email).replace("%data%", bio.contacts.email));
+          $("#footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github).replace("#", bio.contacts.github));
+          $("#footerContacts").append(HTMLmobile.replace("#", bio.contacts.mobile).replace("%data%", bio.contacts.mobile));
+          $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+
+          (bio.contacts.facebook ? $("#social-network").append(HTMLfacebook.replace("%data%", bio.contacts.facebook)) : "");
+          (bio.contacts.instagram ? $("#social-network").append(HTMLinstagram.replace("%data%", bio.contacts.instagram)) : "");
+          (bio.contacts.youtube ? $("#social-network").append(HTMLyoutube.replace("%data%", bio.contacts.youtube)) : "");
+          (bio.contacts.linkedIn ? $("#social-network").append(HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn)) : "");
      }
-}
+};
 
 var work = {
      jobs:[
@@ -50,16 +56,16 @@ var work = {
                "title": "Web Dev Freelancer",
                "employer": "Just me",
                "dates": "2008 - Future",
-               "city": "Fortaleza, CE, Brazil",
-               "description":"Developing some WebSites, Ecommerces and ERPs",
+               "location": "Fortaleza, CE, Brazil",
+               "description":"Developing some WebSites, Ecommerces and ERPs. 8 years of experience with web systems development, web sites, using HTML5, CSS3, PHP OO, MySQL on my own, I am open to opportunities in this area (I have knowledge of C# and JAVA and Frameworks). I wish to participate in innovative projects.",
                "url":"https://ajudanaweb.com.br/"
           },
           {
                "title": "Partner - Manager",
                "employer": "Elfi Service",
                "dates": "1999 - Future",
-               "city": "Fortaleza, CE, Brazil",
-               "description":"Manager a company of Electrical engineering",
+               "location": "Fortaleza, CE, Brazil",
+               "description":"15 years of experience in business management, provision of services in Electricity and Electrotechnology, make reports, budgets, pricing and financial management in Small and Medium Enterprises.",
                "url":"https://elfiservice.eco.br/"
           }
      ],
@@ -70,47 +76,47 @@ var work = {
                workEmployerReplaced = workEmployerReplacedHref.replace("%data%",job.employer);
                $(".work-entry:last").append(workEmployerReplaced + HTMLworkTitle.replace("%data%",job.title));
                $(".work-entry:last").append(HTMLworkDates.replace("%data%", job.dates));
-               $(".work-entry:last").append(HTMLworkLocation.replace("%data%", job.city));
+               $(".work-entry:last").append(HTMLworkLocation.replace("%data%", job.location));
                $(".work-entry:last").append(HTMLworkDescription.replace("%data%", job.description));
           });
      }
 
-}
+};
 
-var project = {
+var projects = {
      "projects": [
           {
                "title": "Elfi Service WebSite",
                "dates": "2010-2017",
-               "description": "",
+               "description": "Website and Web System for Elfi Service company to divulge your services and manage your proposts",
                "images": ["images/elfi1-500_medium_2x.png","images/elfi2-500_medium_2x.png"],
                "url":"https://elfiservice.eco.br/"
           },
           {
                "title": "Dra. Karla Bessa WebSite",
                "dates": "2008-2017",
-               "description": "",
+               "description": "Website for divulgue your services",
                "images": ["images/karla1-500_medium_2x.png","images/karla2-500_medium_2x.png"],
                "url":"https://karlabessa.com.br/"
           },
           {
                "title": "Yoga Santa Felicidade WebSite",
                "dates": "2012-2017",
-               "description": "",
+               "description": "Website and Blog system for divulgue your services and highlights",
                "images": ["images/yoga1-500_medium_2x.png","images/yoga2-500_medium_2x.png"],
                "url":"https://yogasantafelicidade.com/"
           },
           {
                "title": "Polo Satere WebSite",
                "dates": "2016-2017",
-               "description": "",
+               "description": "Website and E-commerce for divulgue your services and products",
                "images": ["images/polo1-500_medium_2x.png","images/polo2-500_medium_2x.png"],
                "url":"http://www.polosatere.com.br/"
           }
 
      ],
      display: function(){
-          project.projects.forEach(function(project){
+          projects.projects.forEach(function(project){
                $(".project-container").append(HTMLprojectStart);
                projectTitleReplacedHref = HTMLprojectTitle.replace("#", project.url);
                projectTitleReplaced = projectTitleReplacedHref.replace("%data%", project.title);
@@ -123,38 +129,46 @@ var project = {
 
           });
      }
-}
+};
 
 var education = {
      "schools": [
           {
                "name": "Unifor",
-               "city": "Fortaleza, Ce, Brazil",
-               "degree": "BA",
+               "location": "Fortaleza, Ce, Brazil",
+               "degree": "BA Electrical Eng.",
                "majors": ["CS"],
-               "dates": 2010,
+               "dates": "2010",
                "url": "http://www.unifor.br/"
           },
           {
                "name": "Uni7",
-               "city": "Fortaleza, CE, Brazil",
-               "degree": "Especialist",
+               "location": "Fortaleza, CE, Brazil",
+               "degree": "Especialist Web System Dev",
                "majors": [""],
-               "dates": 2017,
+               "dates": "2017",
                "url": "http://www.uni7setembro.edu.br/"
+          },
+          {
+               "name": "Strathfield College",
+               "location": "Sydney, NSW, Australia",
+               "degree": "General English",
+               "majors": [""],
+               "dates": "2015",
+               "url": "http://sc.nsw.edu.au/"
           }
      ],
      "onlineCourses": [
           {
                "title": "JavaScript Syntax",
                "school": "Udacity",
-               "dates": 2017,
+               "dates": "2017",
                "url": "https://br.udacity.com/course/javascript-basics--ud804/"
           },
           {
                "title": "Front-End Developer",
                "school": "Udacity",
-               "dates": 2017,
+               "dates": "2017",
                "url": "https://br.udacity.com/course/front-end-web-developer-nanodegree--nd001/"
           }
      ],
@@ -162,9 +176,10 @@ var education = {
           education.schools.forEach(function(school){
                $(".education-container").append(HTMLschoolStart);
                schoolNameReplacedHref = HTMLschoolName.replace("#", school.url);
-               schoolNameReplaced = schoolNameReplacedHref.replace("%data%", school.name)
+               schoolNameReplaced = schoolNameReplacedHref.replace("%data%", school.name);
                $(".education-entry:last").append(schoolNameReplaced + HTMLschoolDegree.replace("%data%", school.degree));
                $(".education-entry:last").append(HTMLschoolDates.replace("%data%", school.dates));
+               $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", school.location));
                for(var i = 0; i < school.majors.length; i++){
                     $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", school.majors));
                }
@@ -185,7 +200,7 @@ var education = {
                });
           }
      }
-}
+};
 
 var setSeo = {
      "favicon": "favicon.png",
@@ -195,12 +210,12 @@ var setSeo = {
           $("link[rel~=shortcut]").attr("href","images/fixed/" + setSeo.favicon);
           $("meta[name~=description]").attr("content", setSeo.siteDescription);
      }
-}
+};
 
 setSeo.setOut();
 bio.display();
 work.display();
-project.display();
+projects.display();
 education.display();
 
 $("#mapDiv").append(googleMap);

@@ -71,6 +71,11 @@ span {
 
 /*GENERALS CLASSES*/
 
+.container {
+    width: 100%;
+    padding: 10px 0;
+}
+
 .clear-fix {
     overflow: auto;
 }
@@ -179,7 +184,7 @@ span {
     color: #f5ae23;
 }
 
-#header ul li .mobile-text, .email-text {
+#header ul li .contact-text {
     display: none;
 }
 
@@ -236,12 +241,16 @@ span {
     width: 100%;
 }
 
+.project-entry p {
+    padding: 0px 20px 20px 20px;
+}
+
 
 /*EDUCATION*/
 
 .education-entry a {
     display: inline-block;
-    width: 250px;
+    width: 280px;
     white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis;
@@ -269,18 +278,35 @@ span {
 #lets-connect {
     text-align: center;
     margin-top: 5%;
+    /*font-size: 1.5em;*/
+}
+
+#lets-connect ul li {
     font-size: 1.5em;
+}
+
+#lets-connect ul li a {
+    color: #f5ae23;
+}
+
+#lets-connect ul li .contact-text {
+    display: none;
 }
 
 
 /*FOOTER*/
 
-footer {
+#footer {
     text-align: center;
     padding: 10px 5%;
     background: #484848;
     color: #fff;
-    font-size: 0.8em;
+    font-size: 0.9em;
+}
+
+#footer ul li {
+    display: inline-block;
+    padding: 0 20px;
 }
 
 
@@ -310,7 +336,7 @@ footer {
         padding: 0 20px;
         font-size: 2em;
     }
-    #header ul li .mobile-text, .email-text {
+    #header ul li .contact-text {
         display: block;
         font-size: 0.5em;
     }
@@ -363,6 +389,20 @@ footer {
         justify-content: center;
     }
     #lets-connect ul li {
+        padding: 0 20px;
+    }
+    #lets-connect ul li .contact-text {
+        display: block;
+        font-size: 0.5em;
+    }
+    #lets-connect .flex-box, .flex-column {
+        justify-content: space-around;
+    }
+    /*FOOTER*/
+    #footer .flex-box {
+        justify-content: center;
+    }
+    #footer ul li {
         padding: 0 20px;
     }
 }

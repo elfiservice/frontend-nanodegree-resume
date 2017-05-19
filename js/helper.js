@@ -16,12 +16,12 @@ var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span class="role">%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><a rel="nofollow" href="tel:#"><i class="fa fa-mobile" aria-hidden="true"></i><span class="click-me">Click me !</span></a><span id="mobile-phone" class="mobile-text white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><a rel="nofollow" href="mailto: Site Resume <#>?subject=Via site Resume"><i class="fa fa-envelope-o" aria-hidden="true"></i></a><span class="email-text white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><a rel="nofollow" href="tel:#"><i class="fa fa-mobile" aria-hidden="true"></i><span class="click-me">Click me !</span></a><span id="mobile-phone" class="contact-text white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><a rel="nofollow" href="mailto: Site Resume <#>?subject=Via site Resume"><i class="fa fa-envelope-o" aria-hidden="true"></i></a><span class="contact-text white-text">%data%</span></li>';
 var HTMLtwitter = '<li class="flex-item"><a href="https://www.twitter.com/%data%" target="_blank" alt="Link to twitter Profile"><i class="fa fa-twitter orange-text" aria-hidden="true"></i></a></li>';
-var HTMLgithub = '<li class="flex-item"><a href="https://www.github.com/%data%" target="_blank" alt="Link to GitHub Profile"><i class="fa fa-github orange-text" aria-hidden="true"></i></a></li>';
+var HTMLgithub = '<li class="flex-item"><a href="https://www.github.com/#" target="_blank" alt="Link to GitHub Profile"><i class="fa fa-github orange-text" aria-hidden="true"></i></a><span class="contact-text white-text">%data%</span></li>';
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a><span class="contact-text white-text">%data%</span></li>';
 
 var HTMLfacebook = '<li class="flex-item footer-item"><a href="https://www.facebook.com/%data%" target="_blank" alt="Link to facebook Profile"><i class="fa fa-facebook orange-text" aria-hidden="true"></i></a></li>';
 var HTMLinstagram = '<li class="flex-item footer-item"><a href="https://www.instagram.com/%data%" target="_blank" alt="Link to instagram Profile"><i class="fa fa-instagram orange-text" aria-hidden="true"></i></a></li>';
@@ -144,7 +144,7 @@ function initializeMap() {
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     education.schools.forEach(function(school){
-      locations.push(school.city);
+      locations.push(school.location);
     });
 
     // iterates through work locations and appends each location to
@@ -152,7 +152,7 @@ function initializeMap() {
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     work.jobs.forEach(function(job){
-      locations.push(job.city);
+      locations.push(job.location);
     });
 
     return locations;
