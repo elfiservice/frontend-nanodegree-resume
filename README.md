@@ -7,5 +7,5 @@ Just follow this [LINK](https://elfiservice.github.io/frontend-nanodegree-resume
 - HTML
 - CSS resposive without framework
 - fontawesome to provide icons
-- Pure Javascript without framework
+- Javascript and JQuery
 
