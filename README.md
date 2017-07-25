@@ -8,4 +8,5 @@ Just follow this [LINK](https://elfiservice.github.io/frontend-nanodegree-resume
 - CSS resposive without framework
 - fontawesome to provide icons
 - Javascript and JQuery
+- Google Maps API
 
